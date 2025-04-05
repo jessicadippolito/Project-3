@@ -34,11 +34,11 @@ class Pakudex:
         self.my_pakudex.sort()
 
     def add_pakuri(self,species):
-        if len(self.my_pakudex) == self.capacity:
+        if self.size == self.capacity:
             print("Error: Pakudex is full!")
             return False
-        for pakuri in self.my_pakudex:
-            if pakuri.get_species() == species:
+        for each_pakuri in self.my_pakudex:
+            if each_pakuri.get_species() == each_pakuri.species:
                 print("Error: Pakudex already contains this species!")
                 return False
         self.my_pakudex.append(species)

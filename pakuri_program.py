@@ -26,6 +26,8 @@ if __name__ == '__main__':
         selection = input("What would you like to do? ")
         if selection == "1":
             array = my_store.get_species_array()
+            print(my_store.get_species_array())
+            print(my_store.size)
             print("Pakuri In Pakudex:")
             for i in range(0,len(array)):
                 print(f'{i+1}. {array[i]}')
@@ -44,6 +46,14 @@ if __name__ == '__main__':
             species = Pakuri(name)
             my_store.add_pakuri(species)
             print(f'Pakuri species {name} successfully added!')
+        elif selection == '4':
+            name = input("Enter the name of the species to evolve: ")
+            species = Pakuri(name)
+            if isinstance(species, Pakuri) == True:
+                Pakuri.evolve(species)
+                print(f'{name} has been evolved!')
+            else:
+                print("Error: No such Pakuri!")
         if selection == '6':
             print("Thanks for using Pakudex! Bye!")
             break
