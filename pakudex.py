@@ -25,10 +25,10 @@ class Pakudex:
         return array
 
     def get_stats(self,species):
-        if isinstance(species,self.my_pakudex):
-            return [self.attack,self.defense,self.speed]
-        else:
-            return None
+        for i in range (0,len(self.my_pakudex)):
+            if species == self.my_pakudex[i].species:
+                return [self.attack,self.defense,self.speed]
+        return None
 
     def sort_pakuri(self):
         self.my_pakudex.sort()
