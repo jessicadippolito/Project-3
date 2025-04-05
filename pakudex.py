@@ -25,7 +25,7 @@ class Pakudex:
         return array
 
     def get_stats(self,species):
-        if isinstance(self.my_pakudex,list):
+        if isinstance(species,self.my_pakudex):
             return [self.attack,self.defense,self.speed]
         else:
             return None
