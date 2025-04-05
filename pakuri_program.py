@@ -43,6 +43,9 @@ if __name__ == '__main__':
                     print(f"Speed: {Pakuri.get_speed(species)}")
                 continue
             elif selection == '3':
+                if len(my_store.my_pakudex) == int(my_store.capacity):
+                    print("Error: Pakudex is full!")
+                    continue
                 name = input("Enter the name of the species to add: ")
                 species = Pakuri(name)
                 my_store.add_pakuri(species)
