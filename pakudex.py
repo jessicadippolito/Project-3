@@ -27,7 +27,7 @@ class Pakudex:
     def get_stats(self,species):
         for i in range (0,len(self.my_pakudex)):
             if species == self.my_pakudex[i].species:
-                return [self.my_pakudex[i].species.attack,self.my_pakudex[i].species.defense,self.my_pakudex[i].species.speed]
+                return [self.my_pakudex[i].attack,self.my_pakudex[i].defense,self.my_pakudex[i].speed]
         return None
 
     def sort_pakuri(self):
