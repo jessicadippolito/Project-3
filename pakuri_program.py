@@ -34,13 +34,9 @@ if __name__ == '__main__':
             elif selection == '2':
                 name = input("Enter the name of the species to display: ")
                 species = Pakuri(name)
-                array = my_store.get_species_array()
-                if array == None:
-                    print("Error: No such Pakuri!")
-                    continue
                 exists = False
-                for i in range(0, len(array)):
-                    if name == array[i]:
+                for i in range(0,len(my_store.my_pakudex)):
+                    if my_store.my_pakudex[i].species == name:
                         print(f"Species: {my_store.my_pakudex[i].species}")
                         print(f"Attack: {my_store.my_pakudex[i].attack}")
                         print(f"Defense: {my_store.my_pakudex[i].defense}")
