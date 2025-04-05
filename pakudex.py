@@ -37,7 +37,6 @@ class Pakudex:
         new_species = Pakuri(species)
         for each_pakuri in self.my_pakudex:
             if each_pakuri.get_species() == new_species.species:
-                print("Error: Pakudex already contains this species!")
                 return False
         self.my_pakudex.append(new_species)
         self.size += 1

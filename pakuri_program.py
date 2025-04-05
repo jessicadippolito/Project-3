@@ -56,6 +56,8 @@ if __name__ == '__main__':
                 name = input("Enter the name of the species to add: ")
                 if my_store.add_pakuri(name):
                     print(f'Pakuri species {name} successfully added!')
+                else:
+                    print("Error: Pakudex already contains this species!")
                 continue
             elif selection == '4':
                 name = input("Enter the name of the species to evolve: ")
