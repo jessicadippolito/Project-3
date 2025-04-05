@@ -67,6 +67,9 @@ if __name__ == '__main__':
                 if exists == False:
                     print("Error: No such Pakuri!")
                 continue
+            elif selection == '5':
+                my_store.sort_pakuri()
+                print("Pakuri have been sorted!")
             elif selection == '6':
                 print("Thanks for using Pakudex! Bye!")
                 break
