@@ -7,8 +7,8 @@ if __name__ == '__main__':
 
     print("Welcome to Pakudex: Tracker Extraordinaire!")
     while True:
-        capacity = int(input("Enter max capacity of the Pakudex: "))
-        if type(int(capacity)) != int:
+        capacity = input("Enter max capacity of the Pakudex: ")
+        if capacity.isnumeric() == False:
             print("Please enter a valid size.")
             continue
         my_store = Pakudex(capacity)
