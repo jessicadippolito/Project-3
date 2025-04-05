@@ -22,7 +22,7 @@ class Pakudex:
             else:
                 for i in range(0,len(self.my_pakudex)):
                     array.append(self.my_pakudex[i].species)
-                    return array
+        return array
 
     def get_stats(self,species):
         if isinstance(self.my_pakudex,list):
@@ -34,14 +34,15 @@ class Pakudex:
         self.my_pakudex.sort()
 
     def add_pakuri(self,species):
-        if self.size == self.capacity:
+        if len(self.my_pakudex) == int(self.capacity):
             print("Error: Pakudex is full!")
             return False
         for each_pakuri in self.my_pakudex:
-            if each_pakuri.get_species() == each_pakuri.species:
+            if each_pakuri.get_species() == species.species:
                 print("Error: Pakudex already contains this species!")
                 return False
         self.my_pakudex.append(species)
+        print(f'Pakuri species {species.species} successfully added!')
         self.size += 1
         return True
 
