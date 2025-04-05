@@ -32,6 +32,7 @@ if __name__ == '__main__':
                 print("Pakuri In Pakudex:")
                 for i in range(0,len(array)):
                     print(f'{i+1}. {array[i]}')
+                continue
             elif selection == '2':
                 name = input("Enter the name of the species to display: ")
                 species = Pakuri(name)
@@ -42,11 +43,13 @@ if __name__ == '__main__':
                     print(f"Attack: {Pakuri.get_attack(species)}")
                     print(f"Defense: {Pakuri.get_defense(species)}")
                     print(f"Speed: {Pakuri.get_speed(species)}")
+                continue
             elif selection == '3':
                 name = input("Enter the name of the species to add: ")
                 species = Pakuri(name)
                 my_store.add_pakuri(species)
                 print(f'Pakuri species {name} successfully added!')
+                continue
             elif selection == '4':
                 name = input("Enter the name of the species to evolve: ")
                 species = Pakuri(name)
@@ -55,9 +58,11 @@ if __name__ == '__main__':
                     print(f'{name} has been evolved!')
                 else:
                     print("Error: No such Pakuri!")
+                continue
             elif selection == '6':
                 print("Thanks for using Pakudex! Bye!")
                 break
             else:
                 print("Unrecognized menu selection!")
+                continue
 
