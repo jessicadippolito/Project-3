@@ -46,3 +46,11 @@ class Pakudex:
         self.size += 1
         return True
 
+    def evolve_species(self,species):
+        for each_pakuri in self.my_pakudex:
+            if each_pakuri.get_species() == species.species:
+                Pakuri.evolve(each_pakuri)
+                return True
+        return False
+
+
