@@ -34,19 +34,20 @@ class Pakudex:
         self.my_pakudex.sort()
 
     def add_pakuri(self,species):
+        new_species = Pakuri(species)
         for each_pakuri in self.my_pakudex:
-            if each_pakuri.get_species() == species.species:
+            if each_pakuri.get_species() == new_species.species:
                 print("Error: Pakudex already contains this species!")
                 return False
-        self.my_pakudex.append(species)
-        print(f'Pakuri species {species.species} successfully added!')
+        self.my_pakudex.append(new_species)
+        print(f'Pakuri species {new_species.species} successfully added!')
         self.size += 1
         return True
 
     def evolve_species(self,species):
-        for each_pakuri in self.my_pakudex:
-            if each_pakuri.get_species() == species.species:
-                each_pakuri = Pakuri.evolve(each_pakuri)
+        for i in range(0,len(self.my_pakudex)):
+            if self.my_pakudex[i].species == species.species:
+                self.my_pakudex[i] = Pakuri.evolve(self.my_pakudex[i])
                 return True
         return False
 

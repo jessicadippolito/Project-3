@@ -54,8 +54,7 @@ if __name__ == '__main__':
                     print("Error: Pakudex is full!")
                     continue
                 name = input("Enter the name of the species to add: ")
-                species = Pakuri(name)
-                my_store.add_pakuri(species)
+                my_store.add_pakuri(name)
                 continue
             elif selection == '4':
                 name = input("Enter the name of the species to evolve: ")
