@@ -7,7 +7,7 @@ if __name__ == '__main__':
 
     print("Welcome to Pakudex: Tracker Extraordinaire!")
     while True:
-        capacity = input("Enter max capacity of the Pakudex: ")
+        capacity = int(input("Enter max capacity of the Pakudex: "))
         if type(int(capacity)) != int:
             print("Please enter a valid size.")
             continue
@@ -50,10 +50,14 @@ if __name__ == '__main__':
             elif selection == '4':
                 name = input("Enter the name of the species to evolve: ")
                 species = Pakuri(name)
-                if isinstance(species, my_store.my_pakudex) == True:
-                    Pakuri.evolve(species)
-                    print(f'{name} has been evolved!')
-                else:
+                array = my_store.get_species_array()
+                exists = False
+                for i in range(0, len(array)):
+                    if name == array[i]:
+                        species = Pakuri.evolve(species)
+                        print(f'{name} has evolved!')
+                        exists = True
+                if exists == False:
                     print("Error: No such Pakuri!")
                 continue
             elif selection == '6':
