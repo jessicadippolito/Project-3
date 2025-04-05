@@ -34,13 +34,17 @@ if __name__ == '__main__':
             elif selection == '2':
                 name = input("Enter the name of the species to display: ")
                 species = Pakuri(name)
-                if isinstance(species, Pakudex) == False:
+                array = my_store.get_species_array()
+                exists = False
+                for i in range(0, len(array)):
+                    if name == array[i]:
+                        print(f"Species: {Pakuri.get_species(species)}")
+                        print(f"Attack: {Pakuri.get_attack(species)}")
+                        print(f"Defense: {Pakuri.get_defense(species)}")
+                        print(f"Speed: {Pakuri.get_speed(species)}")
+                        exists = True
+                if exists == False:
                     print("Error: No such Pakuri!")
-                else:
-                    print(f"Species: {Pakuri.get_species(species)}")
-                    print(f"Attack: {Pakuri.get_attack(species)}")
-                    print(f"Defense: {Pakuri.get_defense(species)}")
-                    print(f"Speed: {Pakuri.get_speed(species)}")
                 continue
             elif selection == '3':
                 if len(my_store.my_pakudex) == int(my_store.capacity):
