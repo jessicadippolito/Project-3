@@ -41,10 +41,10 @@ if __name__ == '__main__':
                 exists = False
                 for i in range(0, len(array)):
                     if name == array[i]:
-                        print(f"Species: {Pakuri.get_species(species)}")
-                        print(f"Attack: {Pakuri.get_attack(species)}")
-                        print(f"Defense: {Pakuri.get_defense(species)}")
-                        print(f"Speed: {Pakuri.get_speed(species)}")
+                        print(f"Species: {my_store.my_pakudex[i].species}")
+                        print(f"Attack: {my_store.my_pakudex[i].attack}")
+                        print(f"Defense: {my_store.my_pakudex[i].defense}")
+                        print(f"Speed: {my_store.my_pakudex[i].speed}")
                         exists = True
                 if exists == False:
                     print("Error: No such Pakuri!")
@@ -61,12 +61,11 @@ if __name__ == '__main__':
                 continue
             elif selection == '4':
                 name = input("Enter the name of the species to evolve: ")
-                species = Pakuri(name)
                 array = my_store.get_species_array()
                 exists = False
                 for i in range(0, len(array)):
                     if name == array[i]:
-                        species = Pakuri.evolve(species)
+                        my_store.my_pakudex[i] = Pakuri.evolve(my_store.my_pakudex[i])
                         print(f'{name} has evolved!')
                         exists = True
                 if exists == False:

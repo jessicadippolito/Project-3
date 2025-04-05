@@ -44,7 +44,7 @@ class Pakudex:
 
     def evolve_species(self,species):
         for i in range(0,len(self.my_pakudex)):
-            if self.my_pakudex[i].species == species.species:
+            if self.my_pakudex[i].species == species:
                 self.my_pakudex[i] = Pakuri.evolve(self.my_pakudex[i])
                 return True
         return False
