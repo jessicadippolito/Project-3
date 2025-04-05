@@ -40,7 +40,7 @@ class Pakudex:
                 print("Error: Pakudex already contains this species!")
                 return False
         self.my_pakudex.append(new_species)
-        print(f'Pakuri species {new_species.species} successfully added!')
+        print(f'Pakuri species {species} successfully added!')
         self.size += 1
         return True
 
