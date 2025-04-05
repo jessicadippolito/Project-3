@@ -35,6 +35,9 @@ if __name__ == '__main__':
                 name = input("Enter the name of the species to display: ")
                 species = Pakuri(name)
                 array = my_store.get_species_array()
+                if array == None:
+                    print("Error: No such Pakuri!")
+                    continue
                 exists = False
                 for i in range(0, len(array)):
                     if name == array[i]:
